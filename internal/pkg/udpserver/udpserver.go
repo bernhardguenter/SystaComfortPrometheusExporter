@@ -210,7 +210,7 @@ func server(
                 // 171=Zirkulation Schaltdifferenz
                 // 179=Betriebszeit Kessel (Stunden) / OK
                 // 180=Betriebszeit Kessel (Minuten) / OK
-                systacomfortBoilerRuntimeSeconds.Set((float64(dp.Values[179])*6 + float64(dp.Values[180])/10) * 60)
+                systacomfortBoilerRuntimeSeconds.Set((float64(dp.Values[179]) * 60 * 60 + float64(dp.Values[180])) * 60)
                 // 181=Anzahl Brennerstarts / OK
                 systacomfortBoilerStartsTotal.Set(float64(dp.Values[181]))
                 // 182=Solare Leistung
